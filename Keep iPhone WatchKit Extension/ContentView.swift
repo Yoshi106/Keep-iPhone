@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var central = Central()
+    
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        VStack {
+            Text("Signal Level").font(.title)
+            if self.central.label == nil
+            {Text("NA")
+                .padding()}
+            else {Text(String(self.central.label))
+                .padding()}
+        }
     }
 }
 

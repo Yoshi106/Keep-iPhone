@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var peripheral = Peripheral()
+    @State var startAdvertise = true
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("SEND SIGNAL")
+                .font(.title)
+                .padding()
+            HStack(spacing: 20) {
+                Button(action: { self.peripheral.startAdvertise() }) { Text("START")
+                    .font(.title2) }
+                Button(action: { self.peripheral.stopAdvertise() }) { Text("STOP")
+                    .font(.title2) }
+            }
+        }
     }
 }
 
@@ -19,3 +32,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

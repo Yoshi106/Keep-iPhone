@@ -27,6 +27,11 @@
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
 	<string>yoshi.Keep-iPhone</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+	</array>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
